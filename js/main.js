@@ -43,20 +43,32 @@ document.addEventListener('click', function(event) {
 });
 
 
-form.submit(function(e) { //СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃРѕР±С‹С‚РёРµ РѕС‚РїСЂР°РІРєРё РґР»СЏ С„РѕСЂРјС‹ СЃ id=form
-    e.preventDefault();
-
-    $.ajax({
-        type: 'POST', //РњРµС‚РѕРґ РѕС‚РїСЂР°РІРєРё
-        url: 'send.php', //РїСѓС‚СЊ РґРѕ php С„Р°РёР»Р° РѕС‚РїСЂР°РІРёС‚РµР»СЏ
-        data: {
-            name: form.name,
-            phone: form.phone
-        },
-        success: function(data) { // СЃoР±С‹С‚Рёe РїoСЃР»e СѓРґaС‡РЅoРіo oР±СЂaС‰eРЅРёСЏ Рє СЃeСЂРІeСЂСѓ Рё РїoР»СѓС‡eРЅРёСЏ oС‚РІeС‚a
-            console.log(1)
-            success.style.display = 'block';
-        }
+const ajaxSend = async (formData) => {
+    const url = 'send.php'
+    const response = await fetch(url, {
+        method: "POST",
+        body: formData
     });
-});
+    if (!response.ok) {
+        throw new Error(`Ошибка по адресу ${url}, статус ошибки ${response.status}`);
+    }
+    return await response.text();
+};
+
+if (document.querySelector("form")) {
+    const forms = document.querySelectorAll("form");
+    forms.forEach(form => {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+
+            ajaxSend(formData)
+                .then((response) => {
+                    console.log(response);
+                    form.reset(); // очищаем поля формы
+                })
+                .catch((err) => console.error(err))
+        });
+    });
+}
 
