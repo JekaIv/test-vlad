@@ -20,8 +20,14 @@ const swiper = new Swiper('.swiper', {
     autoHeight: true
 });
 
-let options = { style: 'currency', currency: 'RUB' };
+let options = {
+    style: 'currency',
+    currency: 'RUB',
+    minimumFractionDigits: 0
+};
+
 let numberFormat = new Intl.NumberFormat('ru-RU', options);
+
 price.textContent = numberFormat.format(+price.textContent);
 
 function closeModal() {
@@ -36,7 +42,7 @@ formActive.addEventListener('click', () => {
 
 close.addEventListener('click', () => closeModal())
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (!form.contains(event.target)
         && !formActive.contains(event.target)) closeModal();
 });
@@ -67,6 +73,7 @@ if (document.querySelector("form")) {
                     form.reset(); // очищаем поля формы
                     formInfo.style.display = 'none';
                     success.style.display = 'block';
+                    document.querySelector("form button").setAttribute('disabled', 'disabled')
                 })
                 .catch((err) => console.error(err))
         });

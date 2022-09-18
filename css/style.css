@@ -21,28 +21,36 @@ main {
   color: red;
 }
 
-.button {
+.header__phone-number, .button {
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
+  -webkit-align-items: center;
   align-items: center;
   background: #16c60c;
   padding: 5px;
+  -webkit-border-radius: 4px;
   border-radius: 4px;
   font-size: 16px;
-  color: #222;
   cursor: pointer;
   border: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   min-width: 190px;
   text-decoration: none;
+  color: #fff;
 }
-.button:hover {
+.header__phone-number:hover, .button:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
@@ -61,12 +69,15 @@ main {
 .header .container {
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
+  -webkit-align-items: center;
   align-items: center;
 }
 @media all and (max-width: 540px) {
@@ -74,6 +85,7 @@ main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     flex-direction: column;
   }
 }
@@ -88,15 +100,19 @@ main {
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
+  -webkit-align-items: center;
   align-items: center;
   gap: 10px;
   -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
 }
 .header__list svg {
@@ -106,29 +122,15 @@ main {
 .header__social {
   display: block;
   font-size: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .header__social:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
-.header__phone-number {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #16c60c;
-  text-decoration: none;
-  padding: 5px;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #222;
-}
-
 .information {
   padding-bottom: 30px;
 }
@@ -145,12 +147,15 @@ main {
 .information__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   -webkit-box-align: start;
   -ms-flex-align: start;
+  -webkit-align-items: flex-start;
   align-items: flex-start;
   gap: 60px;
 }
@@ -159,9 +164,11 @@ main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     flex-direction: column;
     -webkit-box-align: center;
     -ms-flex-align: center;
+    -webkit-align-items: center;
     align-items: center;
   }
 }
@@ -196,14 +203,27 @@ main {
   }
 }
 .information .docs-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 20px;
   margin-top: 30px;
 }
 @media all and (max-width: 600px) {
   .information .docs-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 20px;
   }
@@ -224,8 +244,17 @@ main {
   margin-bottom: 15px;
 }
 .information .price-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .information .price-block h3 {
@@ -233,10 +262,17 @@ main {
 }
 @media all and (max-width: 600px) {
   .information .price-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 20px;
   }
   .information .price-block .button {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
     order: 1;
   }
 }
@@ -248,12 +284,15 @@ main {
 .footer .container {
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   -webkit-box-align: start;
   -ms-flex-align: start;
+  -webkit-align-items: flex-start;
   align-items: flex-start;
   gap: 20px;
 }
@@ -262,9 +301,11 @@ main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     flex-direction: column;
     -webkit-box-align: center;
     -ms-flex-align: center;
+    -webkit-align-items: center;
     align-items: center;
   }
 }
@@ -292,9 +333,11 @@ main {
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
+  -webkit-align-items: center;
   align-items: center;
   gap: 10px;
   margin-top: 20px;
@@ -312,8 +355,16 @@ main {
   position: fixed;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -322,20 +373,40 @@ main {
   display: none;
 }
 .modal-form .form_wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
 }
 .modal-form .form_wrapper input {
   padding: 10px;
   min-width: 280px;
+  -webkit-border-radius: 4px;
   border-radius: 4px;
 }
 .modal-form .form_wrapper label {
   font-size: 13px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
 }
@@ -345,12 +416,22 @@ main {
 .modal-form form {
   width: 500px;
   background: #fff;
+  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 20px;
   position: relative;
   min-height: 268px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .modal-form form .close {
@@ -366,6 +447,8 @@ main {
   position: absolute;
   top: 5px;
   left: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   width: 100%;
   height: 2px;
@@ -376,6 +459,8 @@ main {
   position: absolute;
   top: 5px;
   left: 0;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   width: 100%;
   height: 2px;
