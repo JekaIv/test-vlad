@@ -208,6 +208,9 @@ main {
     gap: 20px;
   }
 }
+.information .link_to_MainSite {
+  margin-top: 30px;
+}
 .information__text {
   font-weight: bold;
 }

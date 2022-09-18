@@ -8,13 +8,11 @@ const modalForm = document.querySelector('.modal-form');
 const body = document.querySelector('body');
 
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
     loop: true,
     autoplay: {
         delay: 5000,
     },
 
-    // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
