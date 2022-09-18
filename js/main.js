@@ -43,16 +43,20 @@ document.addEventListener('click', function(event) {
 });
 
 
-form.addEventListener('submit', (e) => {
+form.submit(function(e) { //СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЃРѕР±С‹С‚РёРµ РѕС‚РїСЂР°РІРєРё РґР»СЏ С„РѕСЂРјС‹ СЃ id=form
     e.preventDefault();
-    let form_data = form.serialize();
+
     $.ajax({
-        type: 'POST',
-        url: 'send.php',
-        data: form_data,
-        success: function(data) {
+        type: 'POST', //РњРµС‚РѕРґ РѕС‚РїСЂР°РІРєРё
+        url: 'send.php', //РїСѓС‚СЊ РґРѕ php С„Р°РёР»Р° РѕС‚РїСЂР°РІРёС‚РµР»СЏ
+        data: {
+            name: form.name,
+            phone: form.phone
+        },
+        success: function(data) { // СЃoР±С‹С‚Рёe РїoСЃР»e СѓРґaС‡РЅoРіo oР±СЂaС‰eРЅРёСЏ Рє СЃeСЂРІeСЂСѓ Рё РїoР»СѓС‡eРЅРёСЏ oС‚РІeС‚a
+            console.log(1)
             success.style.display = 'block';
         }
     });
-})
+});
 
