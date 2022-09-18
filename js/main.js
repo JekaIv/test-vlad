@@ -2,6 +2,7 @@ const price = document.querySelector('.price');
 const form = document.querySelector('#form');
 const close = document.querySelector('.close');
 const success = document.querySelector('.success');
+const formInfo = document.querySelector('.form_wrapper');
 const formActive = document.querySelector('.button-form');
 const modalForm = document.querySelector('.modal-form');
 const body = document.querySelector('body');
@@ -66,6 +67,8 @@ if (document.querySelector("form")) {
                 .then((response) => {
                     console.log(response);
                     form.reset(); // очищаем поля формы
+                    formInfo.style.display = 'none';
+                    success.style.display = 'block';
                 })
                 .catch((err) => console.error(err))
         });
