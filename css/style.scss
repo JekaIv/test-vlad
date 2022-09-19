@@ -12,6 +12,7 @@
 body {
   background: url('../img/baground.jpg') no-repeat top center;
   background-size: cover;
+  color: #222;
 }
 
 main {
@@ -35,24 +36,28 @@ main {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  background: #16c60c;
-  padding: 5px;
+  background: url('../img/button-bg.png') no-repeat;
+  background-size: cover;
+  padding: 10px;
   -webkit-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 35px;
   font-size: 16px;
   cursor: pointer;
   border: none;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
-  transition: all .3s;
+  transition: all .5s;
   min-width: 190px;
   text-decoration: none;
   color: #fff;
+  text-shadow: 0 0 3px black;
+  font-weight: bold;
 
   &:hover {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+    box-shadow: 0 0 10px #222;
   }
 }
 
@@ -85,6 +90,7 @@ main {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+
     @media all and (max-width: 540px) {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -144,6 +150,8 @@ main {
 
   &__phone-number {
     @extend %button;
+    border: 1px solid #fff;
+    background: #222;
   }
 }
 
@@ -223,6 +231,39 @@ main {
     }
   }
 
+  &__list {
+    list-style: none;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    a {
+      text-decoration: none;
+      color: #fff;
+      width: 100%;
+      display: flex;
+      padding: 10px;
+      background: #222;
+      border-radius: 4px;
+      justify-content: space-between;
+      align-items: center;
+      transition: all .5s;
+      svg {
+        fill: #fff;
+        width: 25px;
+        height: 25px;
+      }
+      &:hover {
+        box-shadow: 0 0 10px #222;
+        background: transparent;
+        color: #222;
+        svg{
+          fill: #222;
+        }
+      }
+    }
+  }
+
   .docs-block {
     display: -webkit-box;
     display: -webkit-flex;
@@ -250,7 +291,7 @@ main {
   }
 
   .link_to_MainSite {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   &__text {
