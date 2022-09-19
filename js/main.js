@@ -5,6 +5,7 @@ const success = document.querySelector('.success');
 const formInfo = document.querySelector('.form_wrapper');
 const formActive = document.querySelector('.button-form');
 const modalForm = document.querySelector('.modal-form');
+const modalFormBg = document.querySelector('.modal-form-bg');
 const body = document.querySelector('body');
 
 const swiper = new Swiper('.swiper', {
@@ -31,19 +32,21 @@ let numberFormat = new Intl.NumberFormat('ru-RU', options);
 price.textContent = numberFormat.format(+price.textContent);
 
 function closeModal() {
-    modalForm.style.display = 'none';
+    modalForm.style.right = '-350px';
+    modalFormBg.style.display = 'none';
     body.style.overflow = 'auto';
 }
 
 formActive.addEventListener('click', () => {
-    modalForm.style.display = 'flex';
+    modalForm.style.right = '0';
+    modalFormBg.style.display = 'flex';
     body.style.overflow = 'hidden';
 });
 
 close.addEventListener('click', () => closeModal())
 
 document.addEventListener('click', function (event) {
-    if (!form.contains(event.target)
+    if (!modalForm.contains(event.target)
         && !formActive.contains(event.target)) closeModal();
 });
 
