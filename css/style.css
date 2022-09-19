@@ -233,8 +233,8 @@ main {
 }
 .information__list a svg {
   fill: #fff;
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
 }
 .information__list a:hover {
   box-shadow: 0 0 10px #222;
