@@ -35,8 +35,7 @@ main {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  background: url("../img/button-bg.png") no-repeat;
-  background-size: cover;
+  background: url("../img/buttons/1.png") no-repeat;
   padding: 10px;
   -webkit-border-radius: 4px;
   border-radius: 35px;
@@ -55,6 +54,27 @@ main {
   font-weight: bold;
   position: relative;
   overflow: hidden;
+}
+.catalog.header__phone-number, .catalog.button {
+  background: url("../img/buttons/1.png") no-repeat;
+  background-size: cover;
+}
+.texture.header__phone-number, .texture.button {
+  background: url("../img/buttons/2.png") no-repeat;
+  background-size: cover;
+}
+.button-form.header__phone-number, .button-form.button {
+  background: url("../img/buttons/3.png") no-repeat;
+  background-size: cover;
+}
+.btn-submit.header__phone-number, .btn-submit.button {
+  background: url("../img/buttons/4.png") no-repeat;
+  background-size: cover;
+}
+.link_to_MainSite.header__phone-number, .link_to_MainSite.button {
+  background: url("../img/buttons/5.png") no-repeat;
+  background-size: cover;
+  margin-top: 20px;
 }
 .header__phone-number:before, .button:before {
   content: "";
@@ -290,9 +310,6 @@ main {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
 }
 .information__list a svg {
   fill: #fff;
@@ -300,13 +317,30 @@ main {
   height: 15px;
 }
 .information__list a:hover {
+  background: url("../img/materialList/1.png") no-repeat;
+  background-size: cover;
   -webkit-box-shadow: 0 0 10px #222;
   box-shadow: 0 0 10px #222;
-  background: transparent;
-  color: #222;
 }
-.information__list a:hover svg {
-  fill: #222;
+.information__list a:nth-of-type(2):hover {
+  background: url("../img/materialList/2.png") no-repeat;
+  background-size: cover;
+}
+.information__list a:nth-of-type(3):hover {
+  background: url("../img/materialList/3.png") no-repeat;
+  background-size: cover;
+}
+.information__list a:nth-of-type(4):hover {
+  background: url("../img/materialList/4.png") no-repeat;
+  background-size: cover;
+}
+.information__list a:nth-of-type(5):hover {
+  background: url("../img/materialList/5.png") no-repeat;
+  background-size: cover;
+}
+.information__list a:nth-of-type(6):hover {
+  background: url("../img/materialList/6.png") no-repeat;
+  background-size: cover;
 }
 .information .docs-block {
   display: -webkit-box;
@@ -333,9 +367,6 @@ main {
     flex-direction: column;
     gap: 20px;
   }
-}
-.information .link_to_MainSite {
-  margin-top: 20px;
 }
 .information__text {
   font-weight: bold;
@@ -365,6 +396,9 @@ main {
 }
 .information .price-block h3 {
   margin: 0;
+}
+.information .price-block h3 .price {
+  font-size: 30px;
 }
 @media all and (max-width: 600px) {
   .information .price-block {
