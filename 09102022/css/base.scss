@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  color: #fff;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: url("../img/main-bg.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media all and (max-width: 767px) {
+    overflow: hidden;
+  }
+}
+
+.limit {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  @media all and (max-width: 1023px) {
+    max-width: 800px;
+    padding: 0 10px;
+  }
+}
+
+.content-button{
+  background: #ff5b06;
+  border-radius: 25px;
+  padding: 14px 5px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 5px 15px 0 rgb(255 91 29 / 40%);
+  border: 1px solid #ff5b06;
+
+  &:hover {
+    background: #ff4601;
+    border: 1px solid #b63200;
+  }
+}
+
+.block-title{
+  font-size: 48px;
+  text-align: center;
+  padding-top: 80px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.8) 100%);
+  padding-bottom: 20px;
+
+  @media all and (max-width: 767px){
+    font-size: 35px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 50px;
+  line-height: 1;
+
+  @media all and (max-width: 767px){
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+@keyframes play-button-animate {
+  0% {
+    border-width: 10px;
+    transform: scale(1);
+  }
+
+  80% {
+    border-width: 1px;
+    transform: scale(1.35);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
