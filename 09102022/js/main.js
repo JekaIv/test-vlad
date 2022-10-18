@@ -1,7 +1,7 @@
 const inputs = document.querySelectorAll('.input-wrapper input');
 const slider = document.querySelector('.materials__list');
 let materialsSwiper;
-let flag = 0;
+
 AOS.init({
     offset: 200,
     duration: 500,
@@ -44,37 +44,7 @@ const swiper = new Swiper('.swiper', {
 });
 
 const initMaterialSlider = () => {
-    materialsSwiper = new Swiper(slider, {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-}
-
-if (window.innerWidth <= 767 && flag === 0) {
-    flag = 1;
-    initMaterialSlider();
-}
-window.addEventListener('resize', (event) => {
-    if (event.target.innerWidth <= 767 && flag === 0) {
-        flag = 1;
-        initMaterialSlider();
-
-    } else if (event.target.innerWidth > 767 && flag === 1) {
-        flag = 0;
-        materialsSwiper.destroy();
-    }
-});
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 768 && flag === false) {
-        console.log(slider)
+    if (window.innerWidth <= 767 && slider.dataset.mobile === 'false') {
         materialsSwiper = new Swiper(slider, {
             loop: true,
             pagination: {
@@ -87,14 +57,19 @@ window.addEventListener('resize', () => {
             },
         });
 
-        flag = true;
+        slider.dataset.mobile = 'true'
     }
 
-    if (window.innerWidth > 768) {
-        flag = false;
-        materialsSwiper.destroy();
+    if (window.innerWidth > 767) {
+        slider.dataset.mobile = 'false'
+
+        if (slider.classList.contains('swiper-initialized')) materialsSwiper.destroy()
     }
-});
+}
+
+initMaterialSlider();
+
+window.addEventListener('resize', () => initMaterialSlider())
 
 
 const ajaxSend = async (formData) => {
