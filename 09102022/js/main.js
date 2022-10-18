@@ -7,6 +7,10 @@ AOS.init({
     duration: 500,
     easing: 'ease-in-quad',
     delay: 100,
+    disable: function () {
+        let maxWidth = 767;
+        return window.innerWidth < maxWidth;
+    }
 });
 
 inputs.forEach(input => {
