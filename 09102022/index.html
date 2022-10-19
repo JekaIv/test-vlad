@@ -15,6 +15,11 @@
 </head>
 <body>
 <main>
+    <div class="success">
+        <div class="success__wrapper">
+            Все удачно
+        </div>
+    </div>
     <div class="video__wrapper">
         <video autoplay="" loop="" muted="" class="background desktop">
             <source src="video/fon1.mp4" type="video/mp4">
@@ -65,6 +70,15 @@
                             </div>
                             <div class="main__video-text">
                                 О БИЗНЕСЕ ЗА 2 МИНУТЫ
+                            </div>
+                            <div class="youtube">
+                                <div class="youtube__wrapper">
+                                    <iframe width="100%" height="405" src="https://www.youtube.com/embed/Qe4L_hLfJbI" title="О бизнесе Novak Decor за 2 минуты" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="youtube__content">
+                                        <h3>Какое то видео</h3>
+                                        <button class="content-button scroll_form">Скролл до формы</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="main__information">
@@ -429,7 +443,7 @@
                 </div>
                 <div class="form-block__form" data-aos="fade-left">
                     <h3>Скачайте сертификаты и патент для ознакомления</h3>
-                    <form>
+                    <form id="form">
                         <label class="input-wrapper">
                             <span class="placeholder">Ваше имя *</span>
                             <input type="text" name="name">

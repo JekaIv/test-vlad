@@ -1,7 +1,13 @@
+// variables
 const inputs = document.querySelectorAll('.input-wrapper input');
 const slider = document.querySelector('.materials__list');
+const success = document.querySelector('.success');
+const youtube = document.querySelector('.youtube');
+const play = document.querySelector('.play');
+const scrollForm = document.querySelector('.scroll_form');
 let materialsSwiper;
 
+// animation
 AOS.init({
     offset: 200,
     duration: 500,
@@ -13,6 +19,7 @@ AOS.init({
     }
 });
 
+//inputs
 inputs.forEach(input => {
     input.addEventListener('focus', () => {
         Object.assign(input.previousElementSibling.style, {
@@ -31,6 +38,8 @@ inputs.forEach(input => {
     })
 })
 
+
+//sliders
 const swiper = new Swiper('.swiper', {
     loop: true,
     pagination: {
@@ -49,6 +58,7 @@ const initMaterialSlider = () => {
             loop: true,
             pagination: {
                 el: '.swiper-pagination',
+                type: 'fraction',
                 clickable: true,
             },
             navigation: {
@@ -63,7 +73,8 @@ const initMaterialSlider = () => {
     if (window.innerWidth > 767) {
         slider.dataset.mobile = 'false'
 
-        if (slider.classList.contains('swiper-initialized')) materialsSwiper.destroy()
+        if (slider.classList.contains('swiper-initialized'))
+            materialsSwiper.destroy()
     }
 }
 
@@ -71,7 +82,7 @@ initMaterialSlider();
 
 window.addEventListener('resize', () => initMaterialSlider())
 
-
+//submit form
 const ajaxSend = async (formData) => {
     const url = 'send.php'
     const response = await fetch(url, {
@@ -93,14 +104,46 @@ if (document.querySelector("form")) {
 
             ajaxSend(formData)
                 .then((response) => {
-                    console.log(response);
-                    form.reset(); // очищаем поля формы
-                    formInfo.style.display = 'none';
-                    success.style.display = 'block';
-                    document.querySelector("form button").setAttribute('disabled', 'disabled')
+                    form.reset();
+                    success.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    document.querySelector("form button")
+                        .setAttribute('disabled', 'disabled')
                 })
                 .catch((err) => console.error(err))
         });
     });
 }
+
+
+//modals
+play.onclick = () => {
+    youtube.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+const modalClose = (modal) => {
+    document.addEventListener('click', (event) => {
+        if (!modal.firstElementChild.contains(event.target) && !play.contains(event.target)){
+            modal.style.display = 'none'
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+scrollForm.onclick = () => {
+    const form = document.getElementById('form');
+    youtube.style.display = 'none'
+    document.body.style.overflow = 'auto';
+    form.scrollIntoView({
+        block: "center",
+        inline: "center",
+        behavior: "smooth"
+    });
+}
+
+
+modalClose(success)
+modalClose(youtube)
+
 
