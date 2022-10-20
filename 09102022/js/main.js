@@ -24,7 +24,8 @@ inputs.forEach(input => {
     input.addEventListener('focus', () => {
         Object.assign(input.previousElementSibling.style, {
             transform: 'translateY(-100%)',
-            fontSize: '12px'
+            fontSize: '12px',
+            color: 'rgba(255, 255, 255, 0.7)'
         })
     })
 
@@ -83,6 +84,10 @@ initMaterialSlider();
 window.addEventListener('resize', () => initMaterialSlider())
 
 //submit form
+const inputName = document.querySelector('input[name=name]');
+const inputPhone = document.querySelector('input[name=phone]');
+const inputEmail = document.querySelector('input[name=email]');
+
 const ajaxSend = async (formData) => {
     const url = 'send.php'
     const response = await fetch(url, {
@@ -95,6 +100,8 @@ const ajaxSend = async (formData) => {
     return await response.text();
 };
 
+inputPhone.addEventListener('input', () => inputPhone.value = inputPhone.value = inputPhone.value.replace(/\D/g,''));
+
 if (document.querySelector("form")) {
     const forms = document.querySelectorAll("form");
     forms.forEach(form => {
@@ -102,15 +109,21 @@ if (document.querySelector("form")) {
             e.preventDefault();
             const formData = new FormData(this);
 
-            ajaxSend(formData)
-                .then((response) => {
-                    form.reset();
-                    success.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                    document.querySelector("form button")
-                        .setAttribute('disabled', 'disabled')
-                })
-                .catch((err) => console.error(err))
+            if (inputName.value.length === 0) {
+                inputName.previousElementSibling.style.color = '#f00'
+            } else if (inputPhone.value.length === 0){
+                inputPhone.previousElementSibling.style.color = '#f00'
+            } else if (inputEmail.value.length === 0){
+                inputEmail.previousElementSibling.style.color = '#f00'
+            } else {
+                ajaxSend(formData)
+                    .then((response) => {
+                        form.reset();
+                        success.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    })
+                    .catch((err) => console.error(err))
+            }
         });
     });
 }
@@ -145,5 +158,7 @@ scrollForm.onclick = () => {
 
 modalClose(success)
 modalClose(youtube)
+
+
 
 

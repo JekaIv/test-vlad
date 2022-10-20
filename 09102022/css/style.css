@@ -146,7 +146,7 @@ h2 {
   overflow: hidden;
 }
 .video__wrapper .box-shadow {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.61) 100%);
   padding-top: 0;
   padding-bottom: 50px;
 }
@@ -423,12 +423,21 @@ h2 {
   font-weight: bolder;
   color: #fff;
 }
-.materials__list .swiper-pagination, .materials__list .swiper-button-next, .materials__list .swiper-button-prev {
+.materials__list .swiper-pagination,
+.materials__list .swiper-button-next,
+.materials__list .swiper-button-prev {
   display: none;
 }
 @media all and (max-width: 767px) {
-  .materials__list .swiper-pagination, .materials__list .swiper-button-next, .materials__list .swiper-button-prev {
+  .materials__list .swiper-pagination,
+.materials__list .swiper-button-next,
+.materials__list .swiper-button-prev {
     display: block;
+  }
+}
+@media all and (max-width: 767px) {
+  .materials__list .swiper-button-next {
+    width: auto;
   }
 }
 .materials__list .swiper-pagination-bullet {
