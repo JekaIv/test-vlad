@@ -334,6 +334,14 @@ h2 {
   font-size: 20px;
   font-weight: bold;
   text-shadow: rgba(0, 0, 0, 0.5) 1px 3px 2px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.main__information ul li svg {
+  width: 25px;
+  height: 25px;
+  fill: #ff5b06;
 }
 @media all and (max-width: 767px) {
   .main__information ul li {
