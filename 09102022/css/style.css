@@ -353,6 +353,8 @@ h2 {
   background: rgba(0, 0, 0, 0.15);
   border-radius: 15px;
   padding: 10px 20px;
+  width: fit-content;
+  margin: 0 auto;
 }
 .main__download .title {
   font-size: 32px;
@@ -411,7 +413,7 @@ h2 {
 }
 .materials__list .swiper-slide {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 @media all and (max-width: 767px) {
   .materials__list .swiper-slide img {
