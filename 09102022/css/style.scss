@@ -13,6 +13,85 @@
   z-index: 2;
 }
 
+.modal{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 15;
+  padding-top: 100px;
+  display: none;
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      left: 0;
+      top: 50%;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #141414;
+      transform: rotate(45deg) translateY(-50%);
+    }
+    &:after {
+      content: '';
+      left: 0;
+      top: 50%;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #141414;
+      transform: rotate(-45deg) translateY(-50%);
+    }
+  }
+
+  &__limit {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px;
+    @media all and (max-width: 1023px) {
+      flex-direction: column;
+    }
+  }
+
+  &__img{
+    max-width: 600px;
+
+    @media all and (max-width: 1023px) {
+      max-width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h3 {
+      color: #141414;
+    }
+
+    .price {
+      color: #141414;
+      font-weight: bold;
+      font-size: 40px;
+    }
+  }
+}
+
 .success{
   @include modal;
 
@@ -241,7 +320,7 @@
          font-weight: bold;
          text-shadow: rgb(0 0 0 / 50%) 1px 3px 2px;
          display: flex;
-         align-items: center;
+         align-items: flex-start;
          gap: 20px;
          svg {
            width: 25px;

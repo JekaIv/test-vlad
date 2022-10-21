@@ -1,8 +1,10 @@
 // variables
 const inputs = document.querySelectorAll('.input-wrapper input');
 const slider = document.querySelector('.materials__list');
+const materialItem = document.querySelectorAll('.materials__item');
 const success = document.querySelector('.success');
 const youtube = document.querySelector('.youtube');
+const modal = document.querySelector('.modal');
 const play = document.querySelector('.play');
 const scrollForm = document.querySelector('.scroll_form');
 let materialsSwiper;
@@ -82,6 +84,18 @@ const initMaterialSlider = () => {
 initMaterialSlider();
 
 window.addEventListener('resize', () => initMaterialSlider())
+
+materialItem.forEach(item => {
+    item.addEventListener('click', ()=> {
+        let modalTitle = document.querySelector('.modal__title');
+        let modalImage = document.querySelector('.modal__image');
+        modalTitle.textContent = item.lastChild.previousSibling.textContent
+        modalImage.src = item.children[0].children[1].src
+        modal.style.display = 'block'
+    })
+});
+
+modal.firstElementChild.addEventListener('click', () => modal.style.display = 'none')
 
 //submit form
 const inputName = document.querySelector('input[name=name]');
