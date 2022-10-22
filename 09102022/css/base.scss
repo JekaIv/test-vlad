@@ -33,6 +33,19 @@ main {
   }
 }
 
+@mixin modal {
+  display: none;
+  background: rgba(0,0,0,.7);
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
 .content-button{
   background: #ff5b06;
   border-radius: 25px;

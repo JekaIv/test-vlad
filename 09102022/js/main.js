@@ -1,7 +1,5 @@
 // variables
-const inputs = document.querySelectorAll('.input-wrapper input');
 const slider = document.querySelector('.materials__list');
-const materialItem = document.querySelectorAll('.materials__item');
 const success = document.querySelector('.success');
 const youtube = document.querySelector('.youtube');
 const modal = document.querySelector('.modal');
@@ -20,27 +18,6 @@ AOS.init({
         return window.innerWidth < maxWidth;
     }
 });
-
-//inputs
-inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-        Object.assign(input.previousElementSibling.style, {
-            transform: 'translateY(-100%)',
-            fontSize: '12px',
-            color: 'rgba(255, 255, 255, 0.7)'
-        })
-    })
-
-    input.addEventListener('blur', () => {
-        if (input.value.length === 0) {
-            Object.assign(input.previousElementSibling.style, {
-                transform: 'translateY(0)',
-                fontSize: '14px'
-            })
-        }
-    })
-})
-
 
 //sliders
 const swiper = new Swiper('.swiper', {
@@ -85,64 +62,6 @@ initMaterialSlider();
 
 window.addEventListener('resize', () => initMaterialSlider())
 
-materialItem.forEach(item => {
-    item.addEventListener('click', ()=> {
-        let modalTitle = document.querySelector('.modal__title');
-        let modalImage = document.querySelector('.modal__image');
-        modalTitle.textContent = item.lastChild.previousSibling.textContent
-        modalImage.src = item.children[0].children[1].src
-        modal.style.display = 'block'
-    })
-});
-
-modal.firstElementChild.addEventListener('click', () => modal.style.display = 'none')
-
-//submit form
-const inputName = document.querySelector('input[name=name]');
-const inputPhone = document.querySelector('input[name=phone]');
-const inputEmail = document.querySelector('input[name=email]');
-
-const ajaxSend = async (formData) => {
-    const url = 'send.php'
-    const response = await fetch(url, {
-        method: "POST",
-        body: formData
-    });
-    if (!response.ok) {
-        throw new Error(`Ошибка по адресу ${url}, статус ошибки ${response.status}`);
-    }
-    return await response.text();
-};
-
-inputPhone.addEventListener('input', () => inputPhone.value = inputPhone.value = inputPhone.value.replace(/\D/g,''));
-
-if (document.querySelector("form")) {
-    const forms = document.querySelectorAll("form");
-    forms.forEach(form => {
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-
-            if (inputName.value.length === 0) {
-                inputName.previousElementSibling.style.color = '#f00'
-            } else if (inputPhone.value.length === 0){
-                inputPhone.previousElementSibling.style.color = '#f00'
-            } else if (inputEmail.value.length === 0){
-                inputEmail.previousElementSibling.style.color = '#f00'
-            } else {
-                ajaxSend(formData)
-                    .then((response) => {
-                        form.reset();
-                        success.style.display = 'flex';
-                        document.body.style.overflow = 'hidden';
-                    })
-                    .catch((err) => console.error(err))
-            }
-        });
-    });
-}
-
-
 //modals
 play.onclick = () => {
     youtube.style.display = 'flex';
@@ -172,6 +91,25 @@ scrollForm.onclick = () => {
 
 modalClose(success)
 modalClose(youtube)
+
+//cart-slider
+const sliderMain = document.querySelector('.slider-main');
+const sliderNav = document.querySelector('.slider-nav');
+
+let swiperNav = new Swiper(sliderNav, {
+    slidesPerView: 6,
+    spaceBetween: 10,
+    freeMode: true,
+    loop: true,
+})
+
+let swiperMain = new Swiper(sliderMain, {
+    spaceBetween: 10,
+    loop: true,
+    thumbs: {
+        swiper: swiperNav
+    }
+})
 
 
 
