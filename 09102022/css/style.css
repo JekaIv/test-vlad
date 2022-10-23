@@ -338,6 +338,14 @@ h2 {
   width: 100%;
   height: auto;
 }
+.background iframe {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
 @media all and (max-width: 1023px) {
   .background.desktop {
     display: none;
