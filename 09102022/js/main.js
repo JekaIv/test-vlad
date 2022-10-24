@@ -7,6 +7,13 @@ const play = document.querySelector('.play');
 const scrollForm = document.querySelector('.scroll_form');
 let materialsSwiper;
 
+const preloader = document.querySelector('.preloader');
+
+setTimeout(() => {
+    document.body.style.overflow = 'auto';
+    preloader.style.display = 'none';
+}, 1000)
+
 // animation
 AOS.init({
     offset: 200,
