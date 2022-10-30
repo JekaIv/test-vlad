@@ -9,10 +9,8 @@ let materialsSwiper;
 
 const preloader = document.querySelector('.preloader');
 
-setTimeout(() => {
-    document.body.style.overflow = 'auto';
-    preloader.style.display = 'none';
-}, 1000)
+document.body.style.overflow = 'auto';
+preloader.style.display = 'none';
 
 // animation
 AOS.init({
