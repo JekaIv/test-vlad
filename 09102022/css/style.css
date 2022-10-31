@@ -341,9 +341,6 @@ h2 {
   font-weight: bold;
   font-size: 40px;
 }
-.modal__text ol {
-  padding-left: 20px;
-}
 .modal__text button {
   max-width: 320px;
 }
@@ -352,6 +349,13 @@ h2 {
     min-width: 300px;
     margin: 0 auto;
   }
+}
+.modal__list {
+  padding-left: 20px;
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .success {
