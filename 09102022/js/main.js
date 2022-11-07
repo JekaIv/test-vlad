@@ -1,11 +1,16 @@
 // variables
 const slider = document.querySelector('.materials__list');
+const advantagesSlider = document.querySelector('.advantages .materials__list');
 const success = document.querySelector('.success');
 const youtube = document.querySelector('.youtube');
 const modal = document.querySelector('.modal');
 const play = document.querySelector('.play');
 const scrollForm = document.querySelector('.scroll_form');
+const advantagesVideo = document.querySelectorAll('.advantages-img');
+
 let materialsSwiper;
+let advantagesSwiper;
+
 
 const preloader = document.querySelector('.preloader');
 
@@ -37,7 +42,7 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-const initMaterialSlider = () => {
+const initSlider = (slider) => {
     if (window.innerWidth <= 767 && slider.dataset.mobile === 'false') {
         materialsSwiper = new Swiper(slider, {
             loop: true,
@@ -62,10 +67,49 @@ const initMaterialSlider = () => {
             materialsSwiper.destroy()
     }
 }
+const initSliderAdvantages = (slider) => {
+    if (window.innerWidth <= 767 && slider.dataset.mobile === 'false') {
+        advantagesSwiper = new Swiper(slider, {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
 
-initMaterialSlider();
+        slider.dataset.mobile = 'true'
+    }
 
-window.addEventListener('resize', () => initMaterialSlider())
+    if (window.innerWidth > 767) {
+        slider.dataset.mobile = 'false'
+
+        if (slider.classList.contains('swiper-initialized'))
+            advantagesSwiper.destroy()
+    }
+}
+
+initSlider(slider);
+initSliderAdvantages(advantagesSlider);
+
+window.addEventListener('resize', () => {
+    initSlider(slider);
+    initSliderAdvantages(advantagesSlider);
+})
+
+advantagesVideo.forEach(img => {
+    const n = 3;
+    let src = img.firstElementChild.src;
+
+    img.onclick = () => {
+        src = src.replace(src.substring(src.length - n), 'gif');
+        img.firstElementChild.setAttribute('src', src)
+    }
+})
 
 //modals
 play.onclick = () => {
