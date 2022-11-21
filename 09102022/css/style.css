@@ -378,6 +378,11 @@ h2 {
   padding-top: 0;
   padding-bottom: 50px;
 }
+@media all and (max-width: 767px) {
+  .video__wrapper .box-shadow {
+    padding-bottom: 0;
+  }
+}
 
 .background {
   position: absolute;
@@ -478,6 +483,11 @@ h2 {
     flex-direction: column;
   }
 }
+@media all and (max-width: 767px) {
+  .main__flex-box {
+    margin-bottom: 0;
+  }
+}
 .main__video {
   display: flex;
   justify-content: center;
@@ -557,11 +567,6 @@ h2 {
   margin-bottom: 15px;
   text-shadow: rgba(0, 0, 0, 0.5) 1px 3px 2px;
 }
-@media all and (max-width: 767px) {
-  .main__information h3 {
-    font-size: 22px;
-  }
-}
 .main__information ul {
   list-style: none;
   display: flex;
@@ -581,15 +586,15 @@ h2 {
   height: 25px;
   fill: #ff5b06;
 }
-@media all and (max-width: 767px) {
-  .main__information ul li {
-    font-size: 18px;
-  }
-}
 @media all and (max-width: 1023px) {
   .main__information {
     width: 100%;
     padding: 0;
+  }
+}
+@media all and (max-width: 767px) {
+  .main__information {
+    display: none;
   }
 }
 .main__download {
@@ -766,7 +771,7 @@ h2 {
 }
 
 .advantage {
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   padding: 80px 0 0;
 }
 .advantage__list {
@@ -984,6 +989,7 @@ h2 {
 @media all and (max-width: 767px) {
   .form-block.main__download {
     width: 100%;
+    display: none;
   }
 }
 

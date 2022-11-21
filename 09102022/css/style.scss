@@ -194,6 +194,10 @@
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.61) 100%);
     padding-top: 0;
     padding-bottom: 50px;
+    
+    @media all and (max-width: 767px) {
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -298,6 +302,9 @@
     @media all and (max-width: 1023px) {
       flex-direction: column;
     }
+    @media all and (max-width: 767px) {
+      margin-bottom: 0;
+    }
   }
 
   &__video {
@@ -378,10 +385,6 @@
       color: #ff5b06;
       margin-bottom: 15px;
       text-shadow: rgb(0 0 0 / 50%) 1px 3px 2px;
-
-      @media all and (max-width: 767px) {
-        font-size: 22px;
-      }
     }
 
     ul {
@@ -403,16 +406,15 @@
           height: 25px;
           fill: #ff5b06;
         }
-
-        @media all and (max-width: 767px) {
-          font-size: 18px;
-        }
       }
     }
 
     @media all and (max-width: 1023px) {
       width: 100%;
       padding: 0;
+    }
+    @media all and (max-width: 767px) {
+      display: none;
     }
   }
 
@@ -603,7 +605,7 @@
 }
 
 .advantage {
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   padding: 80px 0 0;
 
   &__list {
@@ -843,6 +845,7 @@
 
     @media all and (max-width: 767px) {
       width: 100%;
+      display: none;
     }
   }
 }
