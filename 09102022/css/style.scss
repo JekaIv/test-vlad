@@ -151,6 +151,7 @@
 
 .success {
   @include modal;
+  text-align: center;
 
   &__wrapper {
     border-radius: 20px;
@@ -159,6 +160,11 @@
     padding: 30px;
     font-size: 20px;
     color: #000;
+    b{
+      color: #000;
+      font-size: 30px;
+      display: block;
+    }
   }
 }
 

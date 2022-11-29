@@ -339,6 +339,7 @@ h2 {
   left: 0;
   top: 0;
   z-index: 2;
+  text-align: center;
 }
 .success__wrapper {
   border-radius: 20px;
@@ -347,6 +348,11 @@ h2 {
   padding: 30px;
   font-size: 20px;
   color: #000;
+}
+.success__wrapper b {
+  color: #000;
+  font-size: 30px;
+  display: block;
 }
 
 .youtube {
