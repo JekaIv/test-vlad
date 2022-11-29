@@ -13,11 +13,18 @@
 </head>
 <body style="overflow: auto">
 <main>
+    <div class="success">
+        <div class="success__wrapper">
+            <b>Спасибо!</b> <br>
+            В ближайшее время с вами свяжется наш менеджер
+        </div>
+    </div>
     <div class="card-modal">
         <div class="card-modal__wrapper">
             <h3>Оставьте ваш номер телефона и мы свяжемся с Вами</h3>
             <div class="form-block__form">
                 <form>
+                    <input type="hidden" name="name" value="Пришло со странице материала" class="name-hidden">
                     <label class="input-wrapper">
                         <span class="placeholder">Номер телефона *</span>
                         <input type="tel" name="phone" required>

@@ -1,6 +1,7 @@
 //inputs
 const inputs = document.querySelectorAll('.input-wrapper input');
-const inputPhone = document.querySelector('input[name=phone]');
+const inputPhone = document.querySelectorAll('input[name=phone]');
+const success = document.querySelector('.success');
 
 inputs.forEach(input => {
     input.addEventListener('focus', () => {
@@ -23,7 +24,7 @@ inputs.forEach(input => {
 
 //submit form
 const ajaxSend = async (formData) => {
-    const url = 'send.php'
+    const url = 'https://listdekor.ru/send.php'
     const response = await fetch(url, {
         method: "POST",
         body: formData
@@ -34,7 +35,13 @@ const ajaxSend = async (formData) => {
     return await response.text();
 };
 
-inputPhone.addEventListener('input', () => inputPhone.value = inputPhone.value = inputPhone.value.replace(/\D/g,''));
+if (document.querySelector('.name-hidden')) {
+    document.querySelector('.name-hidden').value = document.title;
+}
+
+inputPhone.forEach(phone => {
+    phone.addEventListener('input', () => phone.value = phone.value = phone.value.replace(/\D/g,''));
+})
 
 if (document.querySelector("form")) {
     const forms = document.querySelectorAll("form");
@@ -48,8 +55,21 @@ if (document.querySelector("form")) {
                     form.reset();
                     success.style.display = 'flex';
                     document.body.style.overflow = 'hidden';
+                    if(document.querySelector('.card-modal')) {
+                        document.querySelector('.card-modal').style.display = 'none';
+                    }
                 })
                 .catch((err) => console.error(err))
         });
     });
 }
+
+const successClose = () => {
+    document.addEventListener('click', (event) => {
+        if (!success.firstElementChild.contains(event.target)){
+            success.style.display = 'none'
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+successClose();

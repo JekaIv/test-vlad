@@ -221,7 +221,6 @@ h2 {
 
 .modal {
   padding-top: 100px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.61) 100%);
 }
 .modal .close {
   position: absolute;
@@ -929,18 +928,18 @@ h2 {
   }
 }
 
-.form-block .form-block__form {
+.form-block .form-block__form, .card-modal .form-block__form {
   max-width: 400px;
   width: 100%;
 }
-.form-block .form-block__form h3 {
+.form-block .form-block__form h3, .card-modal .form-block__form h3 {
   font-size: 24px;
   font-weight: bold;
   line-height: 1.4;
   margin-bottom: 25px;
   text-align: center;
 }
-.form-block .form-block__form form {
+.form-block .form-block__form form, .card-modal .form-block__form form {
   background: rgba(0, 0, 0, 0.15);
   padding: 20px 29px;
   border-radius: 10px;
@@ -949,16 +948,16 @@ h2 {
   flex-direction: column;
   gap: 20px;
 }
-.form-block .form-block__form form .input-wrapper {
+.form-block .form-block__form form .input-wrapper, .card-modal .form-block__form form .input-wrapper {
   position: relative;
   padding-top: 20px;
 }
-.form-block .form-block__form form .input-wrapper .placeholder {
+.form-block .form-block__form form .input-wrapper .placeholder, .card-modal .form-block__form form .input-wrapper .placeholder {
   position: absolute;
   transition: 300ms all;
   color: rgba(255, 255, 255, 0.7);
 }
-.form-block .form-block__form form .input-wrapper input {
+.form-block .form-block__form form .input-wrapper input, .card-modal .form-block__form form .input-wrapper input {
   width: 100%;
   background: transparent;
   border: none;
@@ -968,21 +967,21 @@ h2 {
   transition: all 0.3s;
   position: relative;
 }
-.form-block .form-block__form form .input-wrapper input:focus-within {
+.form-block .form-block__form form .input-wrapper input:focus-within, .card-modal .form-block__form form .input-wrapper input:focus-within {
   border-bottom-color: #ff5b1d;
 }
-.form-block.main__download .form-block__form {
+.form-block.main__download .form-block__form, .card-modal.main__download .form-block__form {
   max-width: 100%;
 }
-.form-block.main__download .form-block__form h3 {
+.form-block.main__download .form-block__form h3, .card-modal.main__download .form-block__form h3 {
   font-size: 36px;
   text-align: center;
 }
-.form-block.main__download .form-block__form h3 span {
+.form-block.main__download .form-block__form h3 span, .card-modal.main__download .form-block__form h3 span {
   display: block;
   font-size: 24px;
 }
-.form-block.main__download .form-block__form form {
+.form-block.main__download .form-block__form form, .card-modal.main__download .form-block__form form {
   background: none;
   padding: 0;
   border-radius: 0;
@@ -992,12 +991,12 @@ h2 {
   gap: 20px;
 }
 @media all and (max-width: 767px) {
-  .form-block.main__download .form-block__form form {
+  .form-block.main__download .form-block__form form, .card-modal.main__download .form-block__form form {
     flex-direction: column;
   }
 }
 @media all and (max-width: 767px) {
-  .form-block.main__download {
+  .form-block.main__download, .card-modal.main__download {
     width: 100%;
     display: none;
   }

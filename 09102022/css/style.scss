@@ -31,7 +31,6 @@
 
 .modal {
   padding-top: 100px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.61) 100%);
 
   .close {
     position: absolute;
@@ -767,7 +766,7 @@
   }
 }
 
-.form-block{
+.form-block, .card-modal{
   .form-block__form {
     max-width: 400px;
     width: 100%;

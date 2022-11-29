@@ -1,7 +1,6 @@
 // variables
 const slider = document.querySelector('.materials__list');
 const advantagesSlider = document.querySelector('.advantages .materials__list');
-const success = document.querySelector('.success');
 const youtube = document.querySelector('.youtube');
 const modal = document.querySelector('.modal');
 const play = document.querySelector('.play');
@@ -118,10 +117,10 @@ play.onclick = () => {
     document.body.style.overflow = 'hidden';
 }
 
-const modalClose = (modal) => {
+const modalYoutube = () => {
     document.addEventListener('click', (event) => {
-        if (!modal.firstElementChild.contains(event.target) && !play.contains(event.target)){
-            modal.style.display = 'none'
+        if (!modalYoutube.firstElementChild.contains(event.target) && !play.contains(event.target)){
+            modalYoutube.style.display = 'none'
             document.body.style.overflow = 'auto';
         }
     });
@@ -138,9 +137,7 @@ scrollForm.onclick = () => {
     });
 }
 
-
-modalClose(success)
-modalClose(youtube)
+modalYoutube()
 
 
 
