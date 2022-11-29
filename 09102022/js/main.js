@@ -107,7 +107,8 @@ advantagesVideo.forEach(img => {
 
     img.onclick = () => {
         src = src.replace(src.substring(src.length - n), 'gif');
-        img.firstElementChild.setAttribute('src', src)
+        img.firstElementChild.setAttribute('src', src);
+        img.firstElementChild.nextElementSibling.style.display = 'none';
     }
 })
 
