@@ -191,7 +191,6 @@
   overflow: hidden;
 
   .box-shadow {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.61) 100%);
     padding-top: 0;
     padding-bottom: 50px;
     
@@ -454,7 +453,6 @@
 }
 
 .materials {
-  background: rgba(0, 0, 0, 0.8);
   padding-top: 50px;
   padding-bottom: 20px;
 
@@ -485,6 +483,7 @@
     .swiper-slide {
       display: flex;
       justify-content: flex-start;
+      background: rgba(0,0,0, .3);
       @media all and (max-width: 767px) {
         img {
           width: 100%;
@@ -603,7 +602,6 @@
 }
 
 .advantage {
-  background: rgba(0, 0, 0, 0.8);
   padding: 80px 0 0;
 
   &__list {
@@ -647,7 +645,6 @@
 }
 
 .download {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.61) 100%);
   padding: 80px 0 0;
 
   &__download {
@@ -665,7 +662,6 @@
 }
 
 .form-block {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.61) 0%, rgba(0, 0, 0, 0.8) 100%);
   padding: 80px 0 80px;
 
   &.main__download{
@@ -849,7 +845,6 @@
 }
 
 .contacts {
-  background: rgba(0, 0, 0, 0.8);
   padding-top: 50px;
   padding-bottom: 20px;
 
